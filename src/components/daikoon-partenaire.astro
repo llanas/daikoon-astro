@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import PartenaireImage from "../assets/images/partenaire-image.png";
+import HouseIcon from "../assets/svg/house-icon.svg?raw";
+import FoodIcon from "../assets/svg/food-icon.svg?raw";
+import CoffeeIcon from "../assets/svg/coffee-icon.svg?raw";
+import BarIcon from "../assets/svg/bar-icon.svg?raw";
+import HealthIcon from "../assets/svg/health-icon.svg?raw";
+import SportIcon from "../assets/svg/sport-icon.svg?raw";
+import HobbiesIcon from "../assets/svg/hobbies-icon.svg?raw";
+import SvgIcon from "./common/svg-icon.astro";
+
+const listIcons = [
+  {
+    icon: HouseIcon,
+    label: "Boutiques",
+  },
+  {
+    icon: FoodIcon,
+    label: "Food",
+  },
+  {
+    icon: CoffeeIcon,
+    label: "Coffee",
+  },
+  {
+    icon: BarIcon,
+    label: "Bars",
+  },
+  {
+    icon: HealthIcon,
+    label: "Bien-être",
+  },
+  {
+    icon: SportIcon,
+    label: "Sports",
+  },
+  {
+    icon: HobbiesIcon,
+    label: "Loisirs",
+  },
+];
+---
+
+<section
+  class="w-full h-screen bg-gradient-to-br from-light-blue from-80% to-white"
+>
+  <article
+    class="m-auto max-w-screen-xl flex flex-row justify-center items-center h-full"
+  >
+    <div class="w-1/2 flex flex-col gap-8">
+      <h2 class="font-aspekta text-6xl leading-none">
+        Vous souhaitez devenir partenaire ? <br />Rejoignez-nous !
+      </h2>
+      <p class="mt-8 text-lg font-gotham font-bold">
+        Envie d’attirer de nouveaux prospects et de proposer une expérience
+        client innovante ? Rejoignez Daïkoon !
+      </p>
+      <div class="flex flex-row gap-4 w-full pr-12">
+        <input
+          class="block bg-transparent border-2 border-white grow h-12 rounded-md px-4 text-white font-bold placeholder-white"
+          type="text"
+          placeholder="ton mail juste ici !"
+        />
+        <button class="bg-dark-blue w-40 rounded-md"
+          ><span class="font-bold text-lg">GO !</span></button
+        >
+      </div>
+      <div>
+        <ul
+          class="flex flex-row justify-start items-center gap-6 w-full text-primary *:cursor-pointer select-none"
+        >
+          {
+            listIcons.map((icon) => (
+              <li class="flex flex-col items-center gap-2">
+                <div class="p-4 bg-primary rounded-lg flex justify-center items-center">
+                  <SvgIcon raw={icon.icon} class="size-8" />
+                </div>
+                <h4 class="font-bold text-center text-white">{icon.label}</h4>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <div class="w-1/2 h-full relative">
+      <div
+        class={`h-full flex justify-center items-center transition-opacity duration-500 absolute`}
+      >
+        <Image
+          class="h-4/5 object-cover overflow-visible"
+          src={PartenaireImage}
+          alt=""
+        />
+      </div>
+    </div>
+  </article>
+</section>

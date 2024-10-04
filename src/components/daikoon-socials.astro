@@ -1,0 +1,48 @@
+---
+import SvgIcon from "./common/svg-icon.astro";
+import LinkdinLogo from "../assets/svg/linkdin-logo.svg?raw";
+import FacebookLogo from "../assets/svg/facebook-logo.svg?raw";
+import InstagramLogo from "../assets/svg/instagram-logo.svg?raw";
+import SnapshatLogo from "../assets/svg/snapshat-logo.svg?raw";
+import TwitterLogo from "../assets/svg/twitter-logo.svg?raw";
+
+const listSocials = [
+  {
+    label: "Snapshat",
+    logo: SnapshatLogo,
+    link: "",
+  },
+  {
+    label: "Instagram",
+    logo: InstagramLogo,
+    link: "",
+  },
+  {
+    label: "Facebook",
+    logo: FacebookLogo,
+    link: "",
+  },
+  {
+    label: "Twitter",
+    logo: TwitterLogo,
+    link: "",
+  },
+  {
+    label: "Linkdin",
+    logo: LinkdinLogo,
+    link: "",
+  },
+];
+---
+
+<div class="fixed h-screen right-12 bg-transparent z-50">
+  <ul class="flex flex-col justify-center items-center gap-8 h-full">
+    {
+      listSocials.map((social) => (
+        <li>
+          <SvgIcon raw={social.logo} class="size-6" />
+        </li>
+      ))
+    }
+  </ul>
+</div>

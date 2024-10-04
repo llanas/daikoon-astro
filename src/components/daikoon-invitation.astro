@@ -1,0 +1,87 @@
+---
+import SvgIcon from "./common/svg-icon.astro";
+import LinkdinLogo from "../assets/svg/linkdin-logo.svg?raw";
+import FacebookLogo from "../assets/svg/facebook-logo.svg?raw";
+import InstagramLogo from "../assets/svg/instagram-logo.svg?raw";
+import SnapshatLogo from "../assets/svg/snapshat-logo.svg?raw";
+import TwitterLogo from "../assets/svg/twitter-logo.svg?raw";
+import IsometricLogo from "../assets/svg/isometric-logo.svg?raw";
+import RightArrow from "../assets/svg/right-arrow.svg?raw";
+
+const listSocials = [
+  {
+    label: "Snapshat",
+    logo: SnapshatLogo,
+    link: "",
+  },
+  {
+    label: "Instagram",
+    logo: InstagramLogo,
+    link: "",
+  },
+  {
+    label: "Facebook",
+    logo: FacebookLogo,
+    link: "",
+  },
+  {
+    label: "Twitter",
+    logo: TwitterLogo,
+    link: "",
+  },
+  {
+    label: "Linkdin",
+    logo: LinkdinLogo,
+    link: "",
+  },
+];
+---
+
+<section
+  class="w-full h-screen bg-gradient-to-bl from-light-blue from-50% to-white relative"
+>
+  <div
+    class="size-12 rounded-full bg-light-blue absolute top-0 -translate-y-1/2 p-2 left-1/2 shadow-lg cursor-pointer"
+  >
+    <SvgIcon raw={RightArrow} class="rotate-90" />
+  </div>
+  <article
+    class="m-auto max-w-screen-xl flex flex-row justify-center items-center h-full"
+  >
+    <div class="w-1/2 flex justify-center items-center">
+      <SvgIcon raw={IsometricLogo} class="size-96" />
+    </div>
+    <div class="w-1/2 flex flex-col gap-8">
+      <h2 class="font-aspekta text-7xl leading-none">
+        l’app qui te fait gagner sans rien dépenser !
+      </h2>
+      <p class="mt-8 text-lg font-gotham">
+        Défis tes amis sur le thème de ton choix et remporte des daïkoins à
+        dépenser chez nos partenaires !
+      </p>
+      <div class="flex flex-row gap-4 w-full pr-12">
+        <input
+          class="bg-black grow h-12 rounded-md px-4 text-white"
+          type="text"
+          placeholder="ton mail juste ici !"
+        />
+        <button class="bg-primary w-40 rounded-md"
+          ><span class="font-bold text-lg">GO !</span></button
+        >
+      </div>
+      <div>
+        <ul
+          class="flex flex-row justify-start items-center gap-10 w-full text-primary *:cursor-pointer select-none"
+        >
+          {
+            listSocials.map((social) => (
+              <li>
+                <SvgIcon raw={social.logo} class="size-6" />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>

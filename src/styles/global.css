@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'Helvetica';
+	src: url('/fonts/helvetica/HelveticaNeueMedium.otf') format('otf');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: url('/fonts/helvetica/HelveticaNeueBold.otf') format('otf');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aspekta';
+	src: url('/fonts/aspekta/Aspekta-500.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/gotham/GothamMedium.ttf') format('ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'ProductSans';
+    src: url('/fonts/product-sans/ProductSansRegular.ttf') format('ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'ProductSans';
+    src: url('/fonts/product-sans/ProductSansBold.ttf') format('ttf');
+    font-weight: bold;
+}
+
+html,
+body {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica';
+}

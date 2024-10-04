@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets";
+import SvgIcon from "./common/svg-icon.astro";
+import DaikoonStep1Image from "../assets/images/daikoon-step-1.png";
+import DaikoonStep2Image from "../assets/images/daikoon-step-2.png";
+import DaikoonStep3Image from "../assets/images/daikoon-step-3.png";
+import DaikoonStep4Image from "../assets/images/daikoon-step-4.png";
+import RightArrowIcon from "../assets/svg/right-arrow.svg?raw";
+
+const steps = [
+  {
+    title: "Création et personnalisation du défi",
+    description:
+      "Création et personnalisation du défi, thème du défi, temporalité, nombre de participants, mise minimale / maximale, proposition de réponses…",
+    image: DaikoonStep1Image,
+  },
+  {
+    title: "Invitez vos proches à participer",
+    description:
+      "Invitez vos proches à participer ! Vos proches recevront une notification les invitant à participer au défi.",
+    image: DaikoonStep2Image,
+  },
+  {
+    title: "Choisissez une réponse et validez votre mise",
+    description:
+      "Choisissez une réponse et validez votre mise. Les joueurs invités doivent choisir une réponse et miser le nombre de daïkoins indiqués dans le défi. S’ils ne le font pas dans le temps imparti, ils seront « non participant ».",
+    image: DaikoonStep3Image,
+  },
+  {
+    title: "Validation des résultats et du/des vainqueur(s)",
+    description:
+      "Validation des résultats et désignation du/des vainqueur(s) Le créateur du défi valide le résultat et designe le gagnant, qui obtiendra ses daïkoins et pourra les dépenser chez nos partenaires !",
+    image: DaikoonStep4Image,
+  },
+];
+---
+
+<section
+  class="h-screen w-screen bg-dark-blue flex justify-center items-center"
+>
+  <article
+    class="flex flex-row justify-center items-center max-w-screen-xl w-full h-full gap-12"
+  >
+    <div class="w-1/2 flex flex-col gap-4 p-8 h-3/4 justify-between">
+      {
+        steps.map((step, index) => {
+          return (
+            <div data-step={index}>
+              <span class="block relative ml-4 h-fit my-6 text-4xl font-bold before:block before:w-1 before:bg-primary before:h-full before:absolute before:-left-4">
+                étape {index + 1}
+              </span>
+              <h2 class="font-aspekta text-7xl leading-none text-light-blue">
+                {step.title}
+              </h2>
+              <p class="mt-8 text-lg font-gotham">{step.description}</p>
+            </div>
+          );
+        })
+      }
+      <div
+        class="flex flex-row gap-4 justify-start items-center *:cursor-pointer select-none"
+      >
+        <div
+          data-step-arrow={-1}
+          class="size-8 flex justify-center items-center"
+        >
+          <SvgIcon raw={RightArrowIcon} class="w-full h-full rotate-180" />
+        </div>
+        {
+          steps.map((step, index) => (
+            <div
+              data-step-bullet={index}
+              class={`size-4 flex justify-center items-center rounded-full`}
+            />
+          ))
+        }
+        <div
+          data-step-arrow={1}
+          class="size-8 flex justify-center items-center"
+        >
+          <SvgIcon raw={RightArrowIcon} class="w-full h-full" />
+        </div>
+      </div>
+    </div>
+    <div class="w-1/2 h-full relative">
+      {
+        steps.map((step, index) => {
+          return (
+            <div
+              data-step-image={index}
+              class={`h-full flex justify-center items-center transition-opacity duration-500 absolute`}
+            >
+              <Image
+                class="h-4/5 object-cover overflow-visible"
+                src={step.image}
+                alt=""
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </article>
+</section>
+
+<script is:inline>
+  let selectStepIndex = 0;
+  const listStepElement = document.querySelectorAll("[data-step]");
+  const listStepImages = document.querySelectorAll("[data-step-image]");
+  const listStepArrow = document.querySelectorAll("[data-step-arrow]");
+  const listStepBullets = document.querySelectorAll("[data-step-bullet]");
+  console.dir(listStepElement);
+  console.dir(listStepArrow);
+  console.dir(listStepBullets);
+
+  const swipe = (index) => {
+    selectStepIndex = index;
+    listStepArrow[0].classList.toggle("text-light-blue", selectStepIndex == 0);
+    listStepArrow[1].classList.toggle("text-light-blue", selectStepIndex == 3);
+    listStepBullets.forEach((bullet) => {
+      const isSelected =
+        bullet.getAttribute("data-step-bullet") == selectStepIndex;
+      bullet.classList.toggle("bg-white", isSelected);
+      bullet.classList.toggle("bg-light-blue", !isSelected);
+    });
+    listStepElement.forEach((element) => {
+      const hasToBeDisplayed =
+        element.getAttribute("data-step") == selectStepIndex;
+      element.classList.toggle("block", hasToBeDisplayed);
+      element.classList.toggle("hidden", !hasToBeDisplayed);
+    });
+    listStepImages.forEach((element) => {
+      const hasToBeDisplayed =
+        element.getAttribute("data-step-image") == selectStepIndex;
+      element.classList.toggle("opacity-100", hasToBeDisplayed);
+      element.classList.toggle("opacity-0", !hasToBeDisplayed);
+    });
+  };
+
+  listStepBullets.forEach((bullet) => {
+    bullet.addEventListener("click", () => {
+      swipe(bullet.getAttribute("data-step-bullet"));
+    });
+  });
+
+  listStepArrow.forEach((arrow) => {
+    arrow.addEventListener("click", () => {
+      const increment =
+        selectStepIndex + Number(arrow.getAttribute("data-step-arrow"));
+      if (0 <= increment && increment < 4) {
+        swipe(increment);
+      }
+    });
+  });
+
+  swipe(0);
+</script>

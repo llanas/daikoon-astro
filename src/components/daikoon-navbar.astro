@@ -1,0 +1,20 @@
+---
+import SvgIcon from "./common/svg-icon.astro";
+import DaikoonLogo from "../assets/svg/daikoon-logo.svg?raw";
+---
+
+<nav class="bg-transparent fixed w-screen text-white text-lg z-50">
+  <div class="max-w-screen-xl m-auto py-12 flex flex-row justify-between">
+    <div>
+      <SvgIcon raw={DaikoonLogo} />
+    </div>
+    <div>
+      <ul class="flex flex-row gap-6">
+        <li>qui sommes nous ?</li>
+        <li>le concept</li>
+        <li>FAQ</li>
+        <li>contact</li>
+      </ul>
+    </div>
+  </div>
+</nav>

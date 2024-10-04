@@ -1,0 +1,60 @@
+---
+import SvgIcon from "./common/svg-icon.astro";
+import GoogleIcon from "../assets/svg/google-icon.svg?raw";
+import AppleIcon from "../assets/svg/apple-icon.svg?raw";
+import IsometricLogo from "../assets/svg/isometric-logo.svg?raw";
+import HeroImage from "../assets/images/hero-image.png";
+import { Image } from "astro:assets";
+---
+
+<section
+  class="h-screen w-screen bg-gradient-to-b from-light-blue to-white from-70% flex justify-center items-center"
+>
+  <article class="flex flex-row max-w-screen-lg">
+    <div class="w-1/2">
+      <h2 class="font-aspekta text-[110px] leading-none">
+        téléchargez, défiez, gagnez !
+      </h2>
+      <div class="mt-12">
+        <h3 class="font-helvetica font-bold text-4xl">Testez notre appli !</h3>
+        <p class="mt-4 text-xl font-gotham">
+          Défiez vos amis, pariez sans montant ou avec des daïkoins. Dépensez
+          vos daïkoins dans les points de ventes de nos partenaires agréés.
+        </p>
+      </div>
+      <div class="mt-8 flex flex-row gap-8">
+        <button
+          class="bg-white text-black flex flex-row gap-4 p-4 rounded-lg shadow-sm"
+        >
+          <div>
+            <SvgIcon raw={GoogleIcon} class="size-12" />
+          </div>
+          <div
+            class="h-full flex flex-col font-productSans justify-center items-start"
+          >
+            <span class="text-xs">Disponible sur</span>
+            <span class="text-xl font-bold">Google play</span>
+          </div>
+        </button>
+        <button
+          class="bg-white text-black flex flex-row gap-4 p-4 rounded-lg shadow-sm"
+        >
+          <div>
+            <SvgIcon raw={AppleIcon} class="size-12" />
+          </div>
+          <div
+            class="h-full flex flex-col font-productSans justify-center items-start"
+          >
+            <span class="text-xs">Disponible sur</span>
+            <span class="text-xl font-bold">Apple store</span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="w-1/2 relative">
+      <Image class="object-fill" src={HeroImage} alt="" />
+      <SvgIcon raw={IsometricLogo} class="absolute top-52 right-0 scale-90" />
+    </div>
+  </article>
+  <div></div>
+</section>

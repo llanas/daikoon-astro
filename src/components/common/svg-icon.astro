@@ -1,0 +1,9 @@
+---
+const { raw, ...rest } = Astro.props;
+
+const attributesString = Object.entries(rest)
+  .map(([key, value]) => `${key}="${value}"`)
+  .join(" ");
+---
+
+<Fragment set:html={raw.replace("<svg", `<svg ${attributesString}`)} />

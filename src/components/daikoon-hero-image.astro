@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import DaikoonBluryImage from "../assets/images/daikoon-blury.png";
+
+export interface Props {
+  image: ImageMetadata;
+}
+
+const { image } = Astro.props;
+---
+
+<div class="w-screen relative flex justify-center items-center">
+  <Image src={image} alt="" class="object-cover" width={1920} />
+  <div class="absolute w-screen flex justify-center items-center">
+    <Image src={DaikoonBluryImage} class="" alt="" />
+  </div>
+</div>
