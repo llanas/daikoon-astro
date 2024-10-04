@@ -58,7 +58,7 @@ import { Image } from "astro:assets";
       </div>
       <div class="hidden mt-8 md:flex flex-row gap-8">
         <button
-          class="bg-white text-black flex flex-row gap-4 p-4 rounded-lg shadow-sm"
+          class="bg-white text-black flex flex-row gap-4 p-2 rounded-lg shadow-sm"
         >
           <div>
             <SvgIcon raw={GoogleIcon} class="size-12" />
@@ -71,7 +71,7 @@ import { Image } from "astro:assets";
           </div>
         </button>
         <button
-          class="bg-white text-black flex flex-row gap-4 p-4 rounded-lg shadow-sm"
+          class="bg-white text-black flex flex-row gap-4 p-2 rounded-lg shadow-sm"
         >
           <div>
             <SvgIcon raw={AppleIcon} class="size-12" />
@@ -85,8 +85,12 @@ import { Image } from "astro:assets";
         </button>
       </div>
     </div>
-    <div class="mdw-1/2 relative">
-      <Image class="w-3/4 m-auto object-fill" src={HeroImage} alt="" />
+    <div class="md:w-1/2 relative">
+      <Image
+        class="w-3/4 md:w-full m-auto object-fill"
+        src={HeroImage}
+        alt=""
+      />
       <SvgIcon
         raw={IsometricLogo}
         class="hidden md:block absolute top-52 right-0 scale-90"
