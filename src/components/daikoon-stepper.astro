@@ -39,20 +39,34 @@ const steps = [
   class="h-screen w-screen bg-dark-blue flex justify-center items-center"
 >
   <article
-    class="flex flex-row justify-center items-center max-w-screen-xl w-full h-full gap-12"
+    class="flex flex-col md:flex-row justify-center items-center max-w-screen-xl w-full h-full gap-12"
   >
-    <div class="w-1/2 flex flex-col gap-4 p-8 h-3/4 justify-between">
+    <div
+      class="w-full md:w-1/2 flex flex-col gap-4 py-12 md:p-8 h-full md:h-3/4 justify-between items-center"
+    >
       {
         steps.map((step, index) => {
           return (
-            <div data-step={index}>
-              <span class="block relative ml-4 h-fit my-6 text-4xl font-bold before:block before:w-1 before:bg-primary before:h-full before:absolute before:-left-4">
+            <div class="px-8" data-step={index}>
+              <span class="block relative ml-4 h-fit md:my-6 text-4xl font-bold before:block before:w-1 before:bg-primary before:h-4/5 before:absolute before:-left-4">
                 étape {index + 1}
               </span>
-              <h2 class="font-aspekta text-7xl leading-none text-light-blue">
+              <div
+                data-step-image={index}
+                class={`flex justify-center items-center transition-opacity duration-500 h-3/5`}
+              >
+                <Image
+                  class="h-96 object-cover overflow-visible"
+                  src={step.image}
+                  alt=""
+                />
+              </div>
+              <h2 class="font-aspekta text-4xl md:text-7xl leading-none text-light-blue">
                 {step.title}
               </h2>
-              <p class="mt-8 text-lg font-gotham">{step.description}</p>
+              <p class="mt-8 text-lg md:text-lg font-gotham">
+                {step.description}
+              </p>
             </div>
           );
         })
@@ -62,7 +76,7 @@ const steps = [
       >
         <div
           data-step-arrow={-1}
-          class="size-8 flex justify-center items-center"
+          class="hidden size-8 md:flex justify-center items-center"
         >
           <SvgIcon raw={RightArrowIcon} class="w-full h-full rotate-180" />
         </div>
@@ -70,19 +84,19 @@ const steps = [
           steps.map((step, index) => (
             <div
               data-step-bullet={index}
-              class={`size-4 flex justify-center items-center rounded-full`}
+              class={`size-3 flex justify-center items-center rounded-full`}
             />
           ))
         }
         <div
           data-step-arrow={1}
-          class="size-8 flex justify-center items-center"
+          class="hidden size-8 md:flex justify-center items-center"
         >
           <SvgIcon raw={RightArrowIcon} class="w-full h-full" />
         </div>
       </div>
     </div>
-    <div class="w-1/2 h-full relative">
+    <div class="hidden md:block w-1/2 h-full relative">
       {
         steps.map((step, index) => {
           return (

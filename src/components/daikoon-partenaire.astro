@@ -9,6 +9,39 @@ import HealthIcon from "../assets/svg/health-icon.svg?raw";
 import SportIcon from "../assets/svg/sport-icon.svg?raw";
 import HobbiesIcon from "../assets/svg/hobbies-icon.svg?raw";
 import SvgIcon from "./common/svg-icon.astro";
+import LinkdinLogo from "../assets/svg/linkdin-logo.svg?raw";
+import FacebookLogo from "../assets/svg/facebook-logo.svg?raw";
+import InstagramLogo from "../assets/svg/instagram-logo.svg?raw";
+import SnapshatLogo from "../assets/svg/snapshat-logo.svg?raw";
+import TwitterLogo from "../assets/svg/twitter-logo.svg?raw";
+
+const listSocials = [
+  {
+    label: "Snapshat",
+    logo: SnapshatLogo,
+    link: "",
+  },
+  {
+    label: "Instagram",
+    logo: InstagramLogo,
+    link: "",
+  },
+  {
+    label: "Facebook",
+    logo: FacebookLogo,
+    link: "",
+  },
+  {
+    label: "Twitter",
+    logo: TwitterLogo,
+    link: "",
+  },
+  {
+    label: "Linkdin",
+    logo: LinkdinLogo,
+    link: "",
+  },
+];
 
 const listIcons = [
   {
@@ -43,47 +76,79 @@ const listIcons = [
 ---
 
 <section
-  class="w-full h-screen bg-gradient-to-br from-light-blue from-80% to-white"
+  class="w-full md:h-screen bg-gradient-to-br from-light-blue from-80% to-white"
 >
   <article
-    class="m-auto max-w-screen-xl flex flex-row justify-center items-center h-full"
+    class="m-auto max-w-screen-xl flex flex-col md:flex-row justify-center items-center h-full p-10"
   >
-    <div class="w-1/2 flex flex-col gap-8">
-      <h2 class="font-aspekta text-6xl leading-none">
-        Vous souhaitez devenir partenaire ? <br />Rejoignez-nous !
+    <div class="w-full md:w-1/2 flex flex-col gap-4 md:gap-8">
+      <h2 class="font-aspekta text-4xl md:text-6xl leading-none">
+        Vous souhaitez devenir partenaire ?<br />Rejoignez-nous !
       </h2>
-      <p class="mt-8 text-lg font-gotham font-bold">
+      <p class="mt-4 md:mt-8 text-lg font-gotham font-bold">
         Envie d’attirer de nouveaux prospects et de proposer une expérience
         client innovante ? Rejoignez Daïkoon !
       </p>
-      <div class="flex flex-row gap-4 w-full pr-12">
+      <div class="block md:hidden h-full">
+        <div class="h-96 flex justify-center items-center">
+          <Image
+            class="h-4/5 object-cover overflow-visible"
+            src={PartenaireImage}
+            alt=""
+          />
+        </div>
+      </div>
+      <ul
+        class="flex md:hidden flex-wrap flex-row justify-center items-center gap-4 w-full text-primary *:cursor-pointer select-none"
+      >
+        {
+          listIcons.map((icon) => (
+            <li class="flex flex-col items-center gap-2">
+              <div class="p-4 bg-primary rounded-lg flex justify-center items-center">
+                <SvgIcon raw={icon.icon} class="size-8" />
+              </div>
+              <h4 class="font-bold text-center text-white">{icon.label}</h4>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="flex flex-col md:flex-row gap-4 w-full md:pr-12">
         <input
-          class="block bg-transparent border-2 border-white grow h-12 rounded-md px-4 text-white font-bold placeholder-white"
+          class="block w-full bg-transparent border-2 border-white grow h-12 rounded-md px-4 text-white font-bold placeholder-white"
           type="text"
           placeholder="ton mail juste ici !"
         />
-        <button class="bg-dark-blue w-40 rounded-md"
+        <button class="bg-dark-blue h-12 w-full md:w-40 rounded-md"
           ><span class="font-bold text-lg">GO !</span></button
         >
       </div>
-      <div>
-        <ul
-          class="flex flex-row justify-start items-center gap-6 w-full text-primary *:cursor-pointer select-none"
-        >
-          {
-            listIcons.map((icon) => (
-              <li class="flex flex-col items-center gap-2">
-                <div class="p-4 bg-primary rounded-lg flex justify-center items-center">
-                  <SvgIcon raw={icon.icon} class="size-8" />
-                </div>
-                <h4 class="font-bold text-center text-white">{icon.label}</h4>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <ul
+        class="flex md:hidden flex-row justify-center md:justify-start items-center gap-10 w-full text-white *:cursor-pointer select-none my-12"
+      >
+        {
+          listSocials.map((social) => (
+            <li>
+              <SvgIcon raw={social.logo} class="size-6" />
+            </li>
+          ))
+        }
+      </ul>
+      <ul
+        class="hidden md:flex flex-row justify-start items-center gap-6 w-full text-primary *:cursor-pointer select-none"
+      >
+        {
+          listIcons.map((icon) => (
+            <li class="flex flex-col items-center gap-2">
+              <div class="p-4 bg-primary rounded-lg flex justify-center items-center">
+                <SvgIcon raw={icon.icon} class="size-8" />
+              </div>
+              <h4 class="font-bold text-center text-white">{icon.label}</h4>
+            </li>
+          ))
+        }
+      </ul>
     </div>
-    <div class="w-1/2 h-full relative">
+    <div class="hidden md:block w-1/2 h-full relative">
       <div
         class={`h-full flex justify-center items-center transition-opacity duration-500 absolute`}
       >

@@ -40,15 +40,17 @@ const listSocials = [
 
 <section class="w-full bg-gradient-to-t from-light-blue to-white">
   <div
-    class="m-auto max-w-screen-xl flex flex-row h-screen justify-center items-center"
+    class="m-auto max-w-screen-xl flex flex-col-reverse md:flex-row h-screen justify-center items-center p-12"
   >
-    <div class="w-1/2 text-end p-12 mr-12 flex flex-col items-end gap-8">
+    <div
+      class="md:w-1/2 text-center md:text-end py-12 md:mr-12 flex flex-col items-center md:items-end gap-4 md:gap-8"
+    >
       <h3 class="text-2xl text-dark-blue font-bold">
         Retrouvez-nous sur <br /> Nos réseaux sociaux !
       </h3>
       <div>
         <ul
-          class="flex flex-row justify-start items-center gap-10 w-full text-dark-blue *:cursor-pointer select-none"
+          class="flex flex-row justify-center md:justify-start items-center gap-10 w-full text-dark-blue *:cursor-pointer select-none"
         >
           {
             listSocials.map((social) => (
@@ -60,7 +62,7 @@ const listSocials = [
         </ul>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="md:w-1/2">
       <h2 class="font-aspekta text-6xl text-dark-blue my-4">
         Contactez nous !
       </h2>
@@ -88,16 +90,16 @@ const listSocials = [
             placeholder="Saisissez votre message !"
             class="w-full bg-white placeholder-dark-blue p-2 font-bold rounded-sm h-48"
           ></textarea>
-          <button class="bg-primary w-40 text-white font-bold p-4 rounded-md"
+          <button class="bg-primary md:w-40 text-white font-bold p-4 rounded-md"
             >envoyer</button
           >
         </div>
       </form>
     </div>
   </div>
-  <div class="flex flex-col justify-center items-center gap-8 py-20">
-    <Image src={IsometricLogo} class="h-56 overflow-visible" alt="" />
-    <Image src={DaikoonBlury} class="w-96" alt="" />
-    <h3 class="text-2xl font-bold">téléchargez, défiez, gagnez !</h3>
+  <div class="flex flex-col justify-center items-center gap-8 py-20 w-full">
+    <Image src={IsometricLogo} class="w-4/5 md:h-56 overflow-visible" alt="" />
+    <Image src={DaikoonBlury} class="w-3/5 md:w-96" alt="" />
+    <h3 class="text-xl md:text-2xl font-bold">téléchargez, défiez, gagnez !</h3>
   </div>
 </section>
