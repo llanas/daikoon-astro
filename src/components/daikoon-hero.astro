@@ -3,17 +3,19 @@ import SvgIcon from "./common/svg-icon.astro";
 import GoogleIcon from "../assets/svg/google-icon.svg?raw";
 import AppleIcon from "../assets/svg/apple-icon.svg?raw";
 import IsometricLogo from "../assets/svg/isometric-logo.svg?raw";
+import DashedRectangle from "../assets/svg/dashed-rectangle.svg?raw";
 import HeroImage from "../assets/images/hero-image.png";
+import DaikoonBluryImage from "../assets/images/daikoon-blury.png";
 import { Image } from "astro:assets";
 ---
 
 <section
-  class="md:h-screen w-screen bg-gradient-to-b from-light-blue to-white from-70% flex justify-center items-center"
+  class="md:h-screen w-screen bg-gradient-to-b from-light-blue to-white from-70% flex justify-center items-center relative overflow-visible"
 >
-  <article class="flex flex-col md:flex-row lg:max-w-screen-lg">
+  <article class="flex flex-col md:flex-row lg:max-w-screen-xl">
     <div class="w-full mt-24 md:w-1/2">
       <h2
-        class="font-aspekta text-5xl md:text-8xl leading-none text-center m-auto"
+        class="font-aspekta text-5xl md:text-[110px] tracking-tighter leading-none text-center md:text-left m-auto"
       >
         téléchargez, <br /> défiez, <br /> gagnez !
       </h2>
@@ -47,8 +49,10 @@ import { Image } from "astro:assets";
           </div>
         </button>
       </div>
-      <div class="mt-12 px-8">
-        <h3 class="font-helvetica font-bold text-3xl md:text-4xl text-center">
+      <div class="mt-12 px-8 md:px-0">
+        <h3
+          class="font-helvetica font-bold text-3xl md:text-4xl text-center md:text-left"
+        >
           Testez notre appli !
         </h3>
         <p class="mt-4 font-bold md:font-normal text-md md:text-xl font-gotham">
@@ -85,11 +89,12 @@ import { Image } from "astro:assets";
         </button>
       </div>
     </div>
-    <div class="md:w-1/2 relative">
+    <div class="md:w-1/2 relative flex justify-center z-10">
       <Image
         class="w-3/4 md:w-full m-auto object-fill"
         src={HeroImage}
         alt=""
+        loading={"lazy"}
       />
       <SvgIcon
         raw={IsometricLogo}
@@ -97,5 +102,19 @@ import { Image } from "astro:assets";
       />
     </div>
   </article>
-  <div></div>
+  <Image
+    src={DaikoonBluryImage}
+    class="absolute bottom-12 left-1/2 opacity-40 object-contain overflow-hidden"
+    height={300}
+    alt=""
+  />
+  <div
+    class="absolute -bottom-28 right-24 z-10 flex flex-row flex-wrap gap-[20px] w-[578px] h-fit"
+  >
+    {
+      Array.from({ length: 260 }).map(() => (
+        <div class="size-[3px] bg-light-blue" />
+      ))
+    }
+  </div>
 </section>

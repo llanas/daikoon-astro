@@ -14,8 +14,16 @@
 
 @font-face {
 	font-family: 'Aspekta';
-	src: url('/fonts/aspekta/Aspekta-500.woff2') format('woff2');
+	src: url('/fonts/aspekta/Aspekta-500.otf') format('otf');
 	font-weight: 500;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Aspekta';
+	src: url('/fonts/aspekta/Aspekta-800.otf') format('otf');
+	font-weight: 800;
 	font-style: normal;
 }
 
