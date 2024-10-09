@@ -68,7 +68,9 @@ const listExemple = [
   <section
     class="md:h-screen max-w-screen-xl m-auto flex flex-col items-start justify-center px-8 py-12"
   >
-    <h2 class="font-aspekta text-4xl md:text-7xl leading-none text-light-blue">
+    <h2
+      class="font-aspekta text-4xl md:text-[80px] tracking-tight leading-none text-light-blue"
+    >
       Le concept
     </h2>
     <div class="flex flex-col md:flex-row items-start gap-24 md:gap-12 mt-14">
@@ -93,15 +95,17 @@ const listExemple = [
     </div>
   </section>
   <div
-    class="relative md:h-screen max-w-screen-lg m-auto flex flex-col items-start justify-center px-8 py-12"
+    class="relative md:h-screenm-auto flex flex-col items-start justify-center py-12"
   >
-    <div
-      class="size-12 rounded-full bg-light-blue absolute top-0 -translate-y-1/2 -translate-x-1/2 p-2 left-1/2 shadow-lg cursor-pointer"
-    >
-      <SvgIcon raw={RightArrow} class="text-dark-blue rotate-90" />
+    <div class="absolute w-full border border-light-blue top-0">
+      <div
+        class="size-12 rounded-full bg-light-blue absolute -translate-y-1/2 -translate-x-1/2 p-2 left-1/2 shadow-lg cursor-pointer"
+      >
+        <SvgIcon raw={RightArrow} class="text-dark-blue rotate-90" />
+      </div>
     </div>
     <section
-      class="m-auto mt-12 px-6 flex flex-col justify-center items-center md:grid md:grid-cols-3 md:grid-rows-2 gap-8 md:gap-10 [&>:not(:first-child)]:aspect-square *:border-[1px] *:border-light-blue *:rounded-3xl"
+      class="m-auto max-w-screen-lg mt-12 px-8 flex flex-col justify-center items-center md:grid md:grid-cols-3 md:grid-rows-2 gap-8 md:gap-10 [&>:not(:first-child)]:aspect-square *:border-[1px] *:border-light-blue *:rounded-3xl"
     >
       <div
         class="flex flex-col gap-4 justify-center items-center md:items-start col-span-2 border-none"
@@ -116,7 +120,7 @@ const listExemple = [
       {
         listExemple.map((exemple) => {
           return (
-            <article class="flex flex-col justify-start p-8 gap-2">
+            <article class="flex h-full w-full flex-col justify-start p-8 gap-2">
               <div class="p-4 bg-primary rounded-md w-fit">
                 <SvgIcon raw={exemple.icon} class="size-6" />
               </div>
