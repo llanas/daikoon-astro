@@ -9,12 +9,12 @@ import { Image } from "astro:assets";
 ---
 
 <section
-  class="md:h-screen w-screen bg-gradient-to-b from-light-blue to-white from-70% flex justify-center items-center relative overflow-visible"
+  class="w-screen h-screen bg-gradient-to-b from-light-blue to-white from-70% flex justify-center items-center relative overflow-visible"
 >
   <article class="flex flex-col md:flex-row lg:max-w-screen-xl">
-    <div class="w-full mt-24 md:w-1/2">
+    <div class="w-full mt-20 md:mt-32 md:w-1/2">
       <h2
-        class="font-aspekta text-5xl md:text-[110px] tracking-tighter leading-none text-center md:text-left m-auto"
+        class="font-aspekta text-[45px] md:text-[110px] tracking-tighter leading-9 md:leading-none text-center md:text-left m-auto"
       >
         téléchargez, <br /> défiez, <br /> gagnez !
       </h2>
@@ -22,39 +22,41 @@ import { Image } from "astro:assets";
         class="flex mt-8 md:hidden flex-row justify-center items-center gap-4"
       >
         <button
-          class="bg-white text-black flex flex-row justify-center items-center gap-4 p-4 rounded-lg shadow-sm"
+          class="bg-white text-black flex flex-row justify-center items-center gap-4 px-4 py-2 rounded-sm shadow-sm"
         >
           <div>
-            <SvgIcon raw={GoogleIcon} class="size-6" />
+            <SvgIcon raw={GoogleIcon} class="size-4" />
           </div>
           <div
             class="h-full flex flex-col font-productSans justify-center items-start"
           >
             <span class="text-xs">Disponible sur</span>
-            <span class="text-md font-bold">Google play</span>
+            <span class="font-bold">Google play</span>
           </div>
         </button>
         <button
-          class="bg-white text-black flex flex-row justify-center items-center gap-4 p-4 rounded-lg shadow-sm"
+          class="bg-white text-black flex flex-row justify-center items-center gap-4 px-4 py-2 rounded-sm shadow-sm"
         >
           <div>
-            <SvgIcon raw={AppleIcon} class="size-6" />
+            <SvgIcon raw={AppleIcon} class="size-4" />
           </div>
           <div
             class="h-full flex flex-col font-productSans justify-center items-start"
           >
             <span class="text-xs">Disponible sur</span>
-            <span class="text-xl font-bold">Apple store</span>
+            <span class="font-bold">Apple store</span>
           </div>
         </button>
       </div>
-      <div class="mt-12 px-8 md:px-0">
+      <div class="mt-4 md:mt-12 px-8 md:px-0">
         <h3
-          class="font-helvetica font-bold text-3xl md:text-4xl text-center md:text-left"
+          class="font-helvetica font-bold text-[30px] tracking-tight md:text-4xl text-center md:text-left"
         >
           Testez notre appli !
         </h3>
-        <p class="mt-4 font-bold md:font-normal text-md md:text-xl font-gotham">
+        <p
+          class="md:mt-6 md:font-normal text-[15px] md:text-xl tracking-tight leading-5 font-gotham"
+        >
           Défiez vos amis, pariez sans montant ou avec des daïkoins. Dépensez
           vos daïkoins dans les points de ventes de nos partenaires agréés.
         </p>
@@ -103,12 +105,12 @@ import { Image } from "astro:assets";
   </article>
   <Image
     src={DaikoonBluryImage}
-    class="absolute bottom-12 left-1/2 opacity-40 object-contain overflow-hidden"
+    class="hidden md:block absolute bottom-12 left-1/2 opacity-40 object-contain overflow-hidden"
     height={300}
     alt=""
   />
   <div
-    class="absolute -bottom-28 right-24 z-10 flex flex-row flex-wrap gap-[20px] w-[578px] h-fit"
+    class="hidden md:flex absolute -bottom-28 right-24 z-10 flex-row flex-wrap gap-[20px] w-[578px] h-fit"
   >
     {
       Array.from({ length: 260 }).map(() => (

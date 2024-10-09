@@ -38,7 +38,7 @@ const listSocials = [
 ---
 
 <section
-  class="w-full h-screen bg-gradient-to-tl md:bg-gradient-to-bl from-light-blue from-50% to-white relative"
+  class="w-full h-screen bg-gradient-to-tl md:bg-gradient-to-bl from-light-blue from-50% to-white relative p-6"
 >
   <div
     class="size-12 rounded-full bg-light-blue absolute top-0 -translate-y-1/2 -translate-x-1/2 p-2 left-1/2 shadow-lg cursor-pointer"
@@ -46,18 +46,18 @@ const listSocials = [
     <SvgIcon raw={RightArrow} class="rotate-90" />
   </div>
   <article
-    class="m-auto max-w-screen-xl flex flex-col md:flex-row justify-center items-center h-full"
+    class="m-auto max-w-screen-xl flex flex-col gap-4 md:flex-row justify-center items-center h-full"
   >
     <div class="md:w-1/2 flex justify-center items-center">
       <SvgIcon raw={IsometricLogo} class="md:size-96" />
     </div>
     <div class="md:w-1/2 flex flex-col gap-8">
       <h2
-        class="font-aspekta text-4xl md:text-[80px] tracking-tighter leading-[75px]"
+        class="font-aspekta text-[40px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px]"
       >
         l’app qui te fait gagner sans rien dépenser !
       </h2>
-      <p class="md:mt-8 font-bold text-[30px] font-helvetica tracking-tight">
+      <p class="md:mt-8 font-bold md:text-[30px] font-helvetica tracking-tight">
         Défis tes amis sur le thème de ton choix et remporte des daïkoins à
         dépenser chez nos partenaires !
       </p>
@@ -78,7 +78,7 @@ const listSocials = [
           {
             listSocials.map((social) => (
               <li>
-                <SvgIcon raw={social.logo} class="size-6" />
+                <SvgIcon raw={social.logo} class="size-5 md:size-6" />
               </li>
             ))
           }

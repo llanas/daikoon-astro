@@ -36,35 +36,35 @@ const steps = [
 ---
 
 <section
-  class="md:h-screen w-screen bg-dark-blue flex justify-center items-center py-12"
+  class="h-screen w-screen bg-dark-blue flex justify-center items-center p-6 md:py-12"
 >
   <article
     class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl w-full h-full"
   >
     <div
-      class="w-full h-full md:w-1/2 flex flex-col gap-4 py-12 md:h-3/4 justify-between items-center"
+      class="w-full h-full md:w-1/2 flex flex-col gap-4 md:py-12 md:h-3/4 justify-between items-center pb-12 md:pb-0"
     >
       {
         steps.map((step, index) => {
           return (
             <div class="max-w-full overflow-visible h-full" data-step={index}>
-              <span class="block relative ml-4 h-fit md:my-6 text-4xl font-bold before:block before:w-1 before:bg-primary before:h-3/5 before:absolute before:-left-4 before:top-0 before:translate-y-2">
+              <span class="block relative ml-4 h-fit md:my-6 text-[30px] font-bold before:block before:w-1 before:bg-primary before:h-3/5 before:absolute before:-left-4 before:top-0 before:translate-y-2">
                 étape {index + 1}
               </span>
               <div
                 data-step-image={index}
-                class={`flex md:hidden justify-center items-center transition-opacity duration-500 h-3/5`}
+                class={`flex md:hidden justify-center items-center transition-opacity duration-500 h-2/5 scale-125 my-8`}
               >
                 <Image
-                  class=" h-96 object-cover overflow-visible"
+                  class=" h-full object-cover overflow-visible"
                   src={step.image}
                   alt=""
                 />
               </div>
-              <h2 class="font-aspekta text-4xl md:text-[80px] tracking-tighter leading-[75px] text-light-blue">
+              <h2 class="font-aspekta text-[45px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px] text-light-blue">
                 {step.title}
               </h2>
-              <p class="mt-8 text-lg md:text-lg font-gotham">
+              <p class="mt-8 text-[15px] md:text-lg font-gotham">
                 {step.description}
               </p>
             </div>

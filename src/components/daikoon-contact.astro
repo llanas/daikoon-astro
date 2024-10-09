@@ -40,7 +40,7 @@ const listSocials = [
 
 <section class="w-full bg-gradient-to-t from-light-blue to-white">
   <div
-    class="m-auto max-w-screen-xl flex flex-col-reverse md:flex-row h-screen justify-center items-center p-12"
+    class="m-auto max-w-screen-xl flex flex-col-reverse md:flex-row h-screen justify-center items-center p-6 md:p-12"
   >
     <div
       class="md:w-1/2 text-center md:text-end py-12 md:pr-56 flex flex-col items-center md:items-end gap-4 md:gap-8"
@@ -55,7 +55,7 @@ const listSocials = [
           {
             listSocials.map((social) => (
               <li>
-                <SvgIcon raw={social.logo} class="size-6" />
+                <SvgIcon raw={social.logo} class="size-4 md:size-6" />
               </li>
             ))
           }
@@ -63,34 +63,36 @@ const listSocials = [
       </div>
     </div>
     <div class="md:w-1/2">
-      <h2 class="font-aspekta text-[80px] tracking-tighter text-dark-blue my-4">
+      <h2
+        class="font-aspekta text-[40px] md:text-[80px] tracking-tighter text-dark-blue my-4"
+      >
         Contactez nous !
       </h2>
       <h3
-        class="font-helvetica text-[30px] tracking-tight text-dark-blue font-bold"
+        class="font-helvetica text-[30px] tracking-tight leading-8 md:leading-none text-dark-blue font-bold"
       >
         N'hésitez pas à nous contacter !
       </h3>
       <form class="mt-8" action="">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 font-normal">
           <input
             type="text"
             placeholder="Prénom"
-            class="w-full bg-white placeholder-dark-blue p-2 font-bold rounded-sm"
+            class="w-full bg-white placeholder-dark-blue p-2 md:font-bold rounded-sm text-[15px] tracking-tight"
           />
           <input
             type="text"
             placeholder="Nom"
-            class="w-full bg-white placeholder-dark-blue p-2 font-bold rounded-sm"
+            class="w-full bg-white placeholder-dark-blue p-2 md:font-bold rounded-sm"
           />
           <input
             type="email"
             placeholder="e-mail"
-            class="w-full bg-white placeholder-dark-blue p-2 font-bold rounded-sm"
+            class="w-full bg-white placeholder-dark-blue p-2 md:font-bold rounded-sm"
           />
           <textarea
             placeholder="Saisissez votre message !"
-            class="w-full bg-white placeholder-dark-blue p-2 font-bold rounded-sm h-48"
+            class="w-full bg-white placeholder-dark-blue p-2 md:font-bold rounded-sm h-48"
           ></textarea>
           <button class="bg-primary md:w-40 text-white font-bold p-4 rounded-md"
             >envoyer</button
