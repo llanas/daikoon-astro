@@ -36,6 +36,7 @@ const steps = [
 ---
 
 <section
+  data-swipper
   class="h-screen w-screen bg-dark-blue flex justify-center items-center p-6 md:py-12"
 >
   <article
@@ -123,11 +124,44 @@ const steps = [
   const listStepImages = document.querySelectorAll("[data-step-image]");
   const listStepArrow = document.querySelectorAll("[data-step-arrow]");
   const listStepBullets = document.querySelectorAll("[data-step-bullet]");
+  const swiperElement = document.querySelector("[data-swipper]");
   console.dir(listStepElement);
   console.dir(listStepArrow);
   console.dir(listStepBullets);
+  console.dir(swiperElement);
+
+  let touchstart = 0;
+  let touchend = 0;
+  let timeStart = 0;
+
+  function checkDirection() {
+    if (touchend.screenX < touchstart.screenX) swipe(selectStepIndex + 1);
+    if (touchend.screenX > touchstart.screenX) swipe(selectStepIndex - 1);
+  }
+
+  swiperElement.addEventListener("touchstart", (e) => {
+    touchstart = e.changedTouches[0];
+    timeStart = new Date().getTime();
+  });
+
+  swiperElement.addEventListener("touchend", (e) => {
+    touchend = e.changedTouches[0];
+    const duration = new Date().getTime() - timeStart;
+    const distanceY = Math.abs(touchstart.screenY - touchend.screenY);
+    const distanceX = Math.abs(touchstart.screenX - touchend.screenX);
+
+    console.log(duration);
+    console.log(distanceY);
+    console.log(distanceX);
+
+    if (duration > 200 && distanceY <= 100 && distanceX >= 150) {
+      checkDirection();
+    }
+  });
 
   const swipe = (index) => {
+    console.log(index);
+    if (index < 0 || index >= 4) return;
     selectStepIndex = index;
     listStepArrow[0].classList.toggle("text-light-blue", selectStepIndex == 0);
     listStepArrow[1].classList.toggle("text-light-blue", selectStepIndex == 3);
