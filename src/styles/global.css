@@ -51,12 +51,12 @@ body {
 
 @layer components {
 	.headline {
-		@apply font-aspekta text-[45px] md:text-[110px] tracking-tighter leading-9 md:leading-[90px] font-bold;
+		@apply font-aspekta text-[45px] md:text-[110px] tracking-tighter leading-9 md:leading-[90px] font-bold text-left;
 	}
     .title {
-		@apply font-aspekta text-[45px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px] font-bold;
+		@apply font-aspekta text-[45px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px] font-bold text-left;
     }
 	.subtitle {
-		@apply font-bold md:text-[30px] font-helvetica tracking-tight leading-9;
+		@apply font-bold md:text-[30px] font-helvetica tracking-tight leading-9 text-left;
 	}
   }

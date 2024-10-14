@@ -43,9 +43,11 @@ const resetMap = () => {
     });
 };
 
-document.addEventListener("astro:page-load", () => {
-  console.log("test");
+if (typeof screen.orientation !== "undefined") {
+  document.addEventListener("astro:page-load", () => {
+    console.log("test");
+    resetMap();
+  });
   resetMap();
-});
-resetMap();
-onAnimationFrame();
+  onAnimationFrame();
+}

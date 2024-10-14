@@ -10,16 +10,17 @@ const { image } = Astro.props;
 ---
 
 <div
-  class="w-screen h-[75vh] relative flex justify-center items-center overflow-hidden"
+  class="w-screen h-56 md:h-[75vh] relative flex justify-center items-center overflow-hidden"
 >
   <Image
     data-parallax="2"
     src={image}
     alt=""
-    class="object-cover"
-    width={1920}
+    class="object-cover object-center"
+    widths={[240, 540, 720, 1920]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, 1920px`}
   />
-  <div class="absolute w-2/5 flex justify-center items-center">
+  <div class="absolute md:w-2/5 flex justify-center items-center">
     <Image src={DaikoonBluryImage} class="" alt="" width={768} />
   </div>
 </div>
