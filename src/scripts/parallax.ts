@@ -1,11 +1,6 @@
 const mapVisibleParallax = new Map();
 
 const applyParallax = (element: HTMLElement) => {
-  console.log(
-    "applyParallax",
-    element.dataset.parallaxIndex,
-    element.dataset.parallax
-  );
   const parallaxScale = Number(element.dataset.parallax);
   const { top } = element.getBoundingClientRect();
   const middleY = (window.innerHeight - 96) / 2;
@@ -44,7 +39,6 @@ const resetMap = () => {
 };
 
 document.addEventListener("astro:page-load", () => {
-  console.log("test");
   resetMap();
 });
 resetMap();

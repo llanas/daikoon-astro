@@ -124,10 +124,6 @@ const steps = [
   const listStepArrow = document.querySelectorAll("[data-step-arrow]");
   const listStepBullets = document.querySelectorAll("[data-step-bullet]");
   const swiperElement = document.querySelector("[data-swipper]");
-  console.dir(listStepElement);
-  console.dir(listStepArrow);
-  console.dir(listStepBullets);
-  console.dir(swiperElement);
 
   let touchstart = 0;
   let touchend = 0;
@@ -149,17 +145,12 @@ const steps = [
     const distanceY = Math.abs(touchstart.screenY - touchend.screenY);
     const distanceX = Math.abs(touchstart.screenX - touchend.screenX);
 
-    console.log(duration);
-    console.log(distanceY);
-    console.log(distanceX);
-
     if (duration > 200 && distanceY <= 100 && distanceX >= 150) {
       checkDirection();
     }
   });
 
   const swipe = (index) => {
-    console.log(index);
     if (index < 0 || index >= 4) return;
     selectStepIndex = index;
     listStepArrow[0].classList.toggle("text-light-blue", selectStepIndex == 0);
