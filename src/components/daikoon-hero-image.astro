@@ -9,9 +9,11 @@ export interface Props {
 const { image } = Astro.props;
 ---
 
-<div class="w-screen relative flex justify-center items-center">
+<div
+  class="w-screen h-[75vh] relative flex justify-center items-center overflow-hidden"
+>
   <Image src={image} alt="" class="object-cover" width={1920} />
-  <div class="absolute w-3/5 flex justify-center items-center">
-    <Image src={DaikoonBluryImage} class="" alt="" />
+  <div class="absolute w-2/5 flex justify-center items-center">
+    <Image src={DaikoonBluryImage} class="" alt="" width={768} />
   </div>
 </div>

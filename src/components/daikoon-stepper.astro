@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import SvgIcon from "./common/svg-icon.astro";
-import DaikoonStep1Image from "../assets/images/daikoon-step-1.png";
-import DaikoonStep2Image from "../assets/images/daikoon-step-2.png";
-import DaikoonStep3Image from "../assets/images/daikoon-step-3.png";
-import DaikoonStep4Image from "../assets/images/daikoon-step-4.png";
+import DaikoonStep1Image from "../assets/images/step-1.png";
+import DaikoonStep2Image from "../assets/images/step-2.png";
+import DaikoonStep3Image from "../assets/images/step-3.png";
+import DaikoonStep4Image from "../assets/images/step-4.png";
 import RightArrowIcon from "../assets/svg/right-arrow.svg?raw";
 
 const steps = [
@@ -57,14 +57,12 @@ const steps = [
                 class={`flex md:hidden justify-center items-center transition-opacity duration-500 h-2/5 scale-125 my-8`}
               >
                 <Image
-                  class=" h-full object-cover overflow-visible"
+                  class="title h-full object-cover overflow-visible"
                   src={step.image}
                   alt=""
                 />
               </div>
-              <h2 class="font-aspekta text-[45px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px] text-light-blue">
-                {step.title}
-              </h2>
+              <h2 class="title text-light-blue">{step.title}</h2>
               <p class="mt-8 text-[15px] md:text-lg font-gotham">
                 {step.description}
               </p>
@@ -109,6 +107,7 @@ const steps = [
                 class="h-4/5 object-cover overflow-visible"
                 src={step.image}
                 alt=""
+                width={640}
               />
             </div>
           );

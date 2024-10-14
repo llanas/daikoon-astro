@@ -13,9 +13,7 @@ import { Image } from "astro:assets";
 >
   <article class="flex flex-col md:flex-row lg:max-w-screen-xl">
     <div class="w-full mt-20 md:mt-32 md:w-1/2">
-      <h2
-        class="font-aspekta text-[45px] md:text-[110px] tracking-tighter leading-9 md:leading-[90px] text-center md:text-left m-auto"
-      >
+      <h2 class="headline text-center md:text-left m-auto">
         téléchargez, <br /> défiez, <br /> gagnez !
       </h2>
       <div
@@ -96,10 +94,7 @@ import { Image } from "astro:assets";
         src={HeroImage}
         alt=""
         loading={"lazy"}
-      />
-      <SvgIcon
-        raw={IsometricLogo}
-        class="hidden md:block absolute top-52 right-0 scale-90"
+        width={640}
       />
     </div>
   </article>

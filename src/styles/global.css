@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
 	font-family: 'Helvetica';
 	src: url('/fonts/helvetica/HelveticaNeueMedium.otf') format('otf');
@@ -11,14 +15,6 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
-@font-face {
-	font-family: 'Aspekta';
-	src: url('/fonts/aspekta/Aspekta-500.otf') format('otf');
-	font-weight: 500;
-	font-style: normal;
-}
-
 
 @font-face {
 	font-family: 'Aspekta';
@@ -51,3 +47,16 @@ body {
     box-sizing: border-box;
     font-family: 'Helvetica';
 }
+
+
+@layer components {
+	.headline {
+		@apply font-aspekta text-[45px] md:text-[110px] tracking-tighter leading-9 md:leading-[90px] font-bold;
+	}
+    .title {
+		@apply font-aspekta text-[45px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px] font-bold;
+    }
+	.subtitle {
+		@apply font-bold md:text-[30px] font-helvetica tracking-tight leading-9;
+	}
+  }

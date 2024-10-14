@@ -5,8 +5,9 @@ import FacebookLogo from "../assets/svg/facebook-logo.svg?raw";
 import InstagramLogo from "../assets/svg/instagram-logo.svg?raw";
 import SnapshatLogo from "../assets/svg/snapshat-logo.svg?raw";
 import TwitterLogo from "../assets/svg/twitter-logo.svg?raw";
-import IsometricLogo from "../assets/svg/isometric-logo.svg?raw";
+import IsometricBackgroundLogo from "../assets/images/isometric-background-logo.png";
 import RightArrow from "../assets/svg/right-arrow.svg?raw";
+import { Image } from "astro:assets";
 
 const listSocials = [
   {
@@ -49,15 +50,11 @@ const listSocials = [
     class="m-auto max-w-screen-xl flex flex-col gap-4 md:flex-row justify-center items-center h-full"
   >
     <div class="md:w-1/2 flex justify-center items-center">
-      <SvgIcon raw={IsometricLogo} class="md:size-96" />
+      <Image src={IsometricBackgroundLogo} alt="" class="object-cover" />
     </div>
     <div class="md:w-1/2 flex flex-col gap-8">
-      <h2
-        class="font-aspekta text-[40px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px]"
-      >
-        l’app qui te fait gagner sans rien dépenser !
-      </h2>
-      <p class="md:mt-8 font-bold md:text-[30px] font-helvetica tracking-tight">
+      <h2 class="title">l’app qui te fait gagner sans rien dépenser !</h2>
+      <p class="md:mt-8 subtitle md:w-[120%]">
         Défis tes amis sur le thème de ton choix et remporte des daïkoins à
         dépenser chez nos partenaires !
       </p>

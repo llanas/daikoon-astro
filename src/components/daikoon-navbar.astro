@@ -18,13 +18,16 @@ const listNavbarItems = [
 ];
 ---
 
-<nav class="bg-transparent absolute md:fixed w-screen text-white text-lg z-50">
-  <div
+<header
+  id="header"
+  class="transition-translate duration-300 absolute md:fixed w-screen text-white text-lg z-50"
+>
+  <nav
     class="max-w-screen-xl m-auto py-6 md:py-12 flex flex-row md:justify-between justify-center"
   >
     <SvgIcon raw={DaikoonLogo} />
     <div class="hidden md:block">
-      <ul class="flex flex-row gap-6">
+      <ul class="flex flex-row gap-12">
         {
           listNavbarItems.map((item) => {
             return (
@@ -34,5 +37,32 @@ const listNavbarItems = [
         }
       </ul>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
+<script is:inline>
+  var prevScrollpos = window.scrollY;
+  window.addEventListener("scroll", () => {
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var currentScrollPos = window.scrollY;
+    header.classList.toggle(
+      "-translate-y-[124px]",
+      prevScrollpos < currentScrollPos
+    );
+    prevScrollpos = currentScrollPos;
+    hasBeenScrolled = true;
+  });
+</script>
+
+<script is:inline>
+  var isOverlayed = false;
+  const onScroll = () => {
+    isOverlayed = window.scrollY > 64;
+    const header = document.getElementById("header");
+    header.classList.toggle("backdrop-blur-md", isOverlayed);
+    header.classList.toggle("bg-white", isOverlayed);
+    header.classList.toggle("bg-opacity-15", isOverlayed);
+  };
+
+  document.addEventListener("scroll", onScroll);
+  onScroll();
+</script>
