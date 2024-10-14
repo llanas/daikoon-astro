@@ -48,6 +48,11 @@ body {
     font-family: 'Helvetica';
 }
 
+@layer base {
+	input, textarea {
+		@apply outline-primary
+	}
+}
 
 @layer components {
 	.headline {
@@ -57,6 +62,6 @@ body {
 		@apply font-aspekta text-[45px] md:text-[80px] tracking-tighter leading-9 md:leading-[75px] font-bold text-left;
     }
 	.subtitle {
-		@apply font-bold md:text-[30px] font-helvetica tracking-tight leading-9 text-left;
+		@apply font-helvetica text-[25px] md:text-[30px] tracking-tight leading-9 font-bold text-left;
 	}
   }

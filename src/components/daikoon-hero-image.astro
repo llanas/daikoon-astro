@@ -16,11 +16,11 @@ const { image } = Astro.props;
     data-parallax="2"
     src={image}
     alt=""
-    class="object-cover object-center"
+    class="object-cover object-center h-[150%]"
     widths={[240, 540, 720, 1920]}
     sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, 1920px`}
   />
-  <div class="absolute md:w-2/5 flex justify-center items-center">
+  <div class="absolute w-2/3 md:w-2/5 flex justify-center items-center">
     <Image src={DaikoonBluryImage} class="" alt="" width={768} />
   </div>
 </div>
