@@ -77,10 +77,10 @@ const listIcons = [
 ---
 
 <section
-  class="w-full md:h-screen bg-gradient-to-br from-light-blue from-80% to-white relative overflow-visible"
+  class="w-full md:h-screen md:min-h-screen flex bg-gradient-to-br from-light-blue from-80% to-white relative overflow-visible"
 >
   <article
-    class="m-auto max-w-screen-2xl flex flex-col md:flex-row justify-center items-center h-full p-7 md:p-10"
+    class="m-auto w-full max-w-screen-2xl flex flex-col md:flex-row justify-center items-center h-full p-7 md:p-10"
   >
     <div class="w-full md:w-2/3 h-full flex flex-col justify-center gap-8">
       <h2 class="title mt-2">
@@ -141,8 +141,8 @@ const listIcons = [
         {
           listIcons.map((icon) => (
             <li class="flex flex-col items-center gap-2">
-              <div class="p-4 bg-primary rounded-lg flex justify-center items-center">
-                <SvgIcon raw={icon.icon} class="size-8" />
+              <div class="p-4 size-20 bg-primary rounded-lg flex justify-center items-center">
+                <SvgIcon raw={icon.icon} class="size-full text-white" />
               </div>
               <h4 class="font-bold text-center text-white">{icon.label}</h4>
             </li>
