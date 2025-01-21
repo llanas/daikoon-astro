@@ -1,0 +1,28 @@
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica';
+}
+
+main {
+    @apply max-w-screen-lg mx-auto font-helvetica bg-white text-black py-16;
+}
+
+h1 {
+    @apply font-aspekta text-4xl md:text-8xl 
+}
+
+table {
+    @apply table-fixed;
+}
+
+th {
+    @apply bg-gray-200 grow;
+}
+
+tbody tr:nth-child(odd) {
+    @apply bg-gray-100;
+}

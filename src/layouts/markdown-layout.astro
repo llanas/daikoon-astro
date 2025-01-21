@@ -1,0 +1,42 @@
+---
+import "../styles/global-markdown.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseHead from "../components/common/base-head.astro";
+import type { MarkdownLayoutProps } from "astro";
+import DaikoonFooter from "../components/daikoon-footer.astro";
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  date: string;
+}>;
+
+// Now, `frontmatter`, `url`, and other Markdown layout properties
+// are accessible with type safety
+const { frontmatter, url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      image="images/daikoon_logo.svg"
+    />
+  </head>
+  <body>
+    <header class="text-center w-full">
+      <h1>
+        {frontmatter.title}
+      </h1>
+    </header>
+    <main>
+      <slot />
+      <div class="text-center mt-16">
+        <span class="text-xl font-bold">{frontmatter.date}</span>
+      </div>
+    </main>
+    <DaikoonFooter />
+  </body>
+</html>
